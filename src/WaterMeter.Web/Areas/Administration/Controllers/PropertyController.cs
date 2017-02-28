@@ -2,11 +2,12 @@
 using System.Web.Mvc;
 using WaterMeter.Core.Entities;
 using WaterMeter.Core.Persistance;
-using WaterMeter.Web.Models.Property;
+using WaterMeter.Web.Areas.Administration.Models.Property;
 
-namespace WaterMeter.Web.Controllers
+namespace WaterMeter.Web.Areas.Administration.Controllers
 {
-
+    //[Authorize(Roles = "Administrator")]
+    [RouteArea(nameof(Administration), AreaPrefix = "")]
     [RoutePrefix("property")]
     public class PropertyController : Controller
     {
@@ -56,7 +57,7 @@ namespace WaterMeter.Web.Controllers
                     db.Properties.Add(property);
                     db.SaveChanges();
                 }
-                return RedirectToAction("List");
+                return RedirectToAction(nameof(List));
             }
 
             return View();

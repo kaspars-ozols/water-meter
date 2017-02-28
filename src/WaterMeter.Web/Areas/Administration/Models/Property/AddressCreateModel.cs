@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WaterMeter.Web.Models.Property
+namespace WaterMeter.Web.Areas.Administration.Models.Property
 {
     public class AddressCreateModel
     {
