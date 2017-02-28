@@ -1,0 +1,29 @@
+﻿@model WaterMeter.Web.Models.Property.AddressListModel
+
+@if (Model == null || !Model.Addresses.Any())
+{
+    <p>There are no properties</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var property in Model.Addresses)
+            {
+                <tr>
+                    <td>@property.Address</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { Id = property.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+@Html.ActionLink("Add new property", "Create")
