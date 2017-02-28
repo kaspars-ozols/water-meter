@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterMeter.Web", "WaterMete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterMeter.Core", "WaterMeter.Core\WaterMeter.Core.csproj", "{EFFFDA0C-9640-4DFE-8D43-F8BEF59BB812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterMeter.ScheduledJob", "WaterMeter.ScheduledJob\WaterMeter.ScheduledJob.csproj", "{B7FA1702-3B25-468A-A1C8-03152F103787}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EFFFDA0C-9640-4DFE-8D43-F8BEF59BB812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFFFDA0C-9640-4DFE-8D43-F8BEF59BB812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFFFDA0C-9640-4DFE-8D43-F8BEF59BB812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7FA1702-3B25-468A-A1C8-03152F103787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7FA1702-3B25-468A-A1C8-03152F103787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7FA1702-3B25-468A-A1C8-03152F103787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7FA1702-3B25-468A-A1C8-03152F103787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

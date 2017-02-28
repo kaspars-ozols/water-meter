@@ -7,8 +7,8 @@ using WaterMeter.Web.Models.Property;
 namespace WaterMeter.Web.Controllers
 {
 
-    [RoutePrefix("address")]
-    public class AddressController : Controller
+    [RoutePrefix("property")]
+    public class PropertyController : Controller
     {
         [HttpGet]
         [Route("list")]
@@ -18,9 +18,9 @@ namespace WaterMeter.Web.Controllers
 
             using (var db = new ApplicationDbContext())
             {
-                model.Addresses = db.Addresses
+                model.Addresses = db.Properties
                     .OrderBy(x => x.Address)
-                    .Select(x => new ListItemModel
+                    .Select(x => new AddressListItemModel
                     {
                         Id = x.Id,
                         Address = x.Address
@@ -53,7 +53,7 @@ namespace WaterMeter.Web.Controllers
                         Address = model.Address
                     };
 
-                    db.Addresses.Add(property);
+                    db.Properties.Add(property);
                     db.SaveChanges();
                 }
                 return RedirectToAction("List");
@@ -68,7 +68,7 @@ namespace WaterMeter.Web.Controllers
         {
             using (var db = new ApplicationDbContext())
             {
-                var address = db.Addresses.FirstOrDefault(x => x.Id == id);
+                var address = db.Properties.FirstOrDefault(x => x.Id == id);
 
                 if (address == null)
                     return HttpNotFound();
@@ -91,7 +91,7 @@ namespace WaterMeter.Web.Controllers
             {
                 using (var db = new ApplicationDbContext())
                 {
-                    var property = db.Addresses.FirstOrDefault(x => x.Id == model.Id);
+                    var property = db.Properties.FirstOrDefault(x => x.Id == model.Id);
 
                     if (property == null)
                         return HttpNotFound();

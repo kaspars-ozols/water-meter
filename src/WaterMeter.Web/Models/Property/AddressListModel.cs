@@ -4,6 +4,6 @@ namespace WaterMeter.Web.Models.Property
 {
     public class AddressListModel
     {
-        public List<ListItemModel> Addresses { get; set; } = new List<ListItemModel>();
+        public List<AddressListItemModel> Addresses { get; set; } = new List<AddressListItemModel>();
     }
 }

@@ -11,7 +11,7 @@ namespace WaterMeter.Core.Persistance
             Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Property> Addresses { get; set; }
+        public DbSet<Property> Properties { get; set; }
         public DbSet<Meter> Meters { get; set; }
         public DbSet<MeterReading> MeterReadings { get; set; }
     }
