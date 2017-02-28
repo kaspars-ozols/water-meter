@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using WaterMeter.Core.Constants;
 using WaterMeter.Core.Entities;
 using WaterMeter.Core.Persistance;
-using WaterMeter.Web.Areas.Administration.Models;
 using WaterMeter.Web.Areas.Administration.Models.Meter;
 
 namespace WaterMeter.Web.Areas.Administration.Controllers
 {
-    //[Authorize(Roles = "Administrator")]
+    [Authorize(Roles = Role.Administrator)]
     [RouteArea(nameof(Administration), AreaPrefix = "")]
     [RoutePrefix("meter")]
     public class MeterController : Controller

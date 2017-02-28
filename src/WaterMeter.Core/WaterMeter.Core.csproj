@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Role.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Meter.cs" />
     <Compile Include="Entities\MeterReading.cs" />
@@ -78,6 +79,7 @@
       <DependentUpon>201702252334021_InitialEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
