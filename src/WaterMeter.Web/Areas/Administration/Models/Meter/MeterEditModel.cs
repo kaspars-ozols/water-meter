@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WaterMeter.Web.Areas.Administration.Models.Property
+namespace WaterMeter.Web.Areas.Administration.Models.Meter
 {
-    public class AddressEditModel
+    public class MeterEditModel
     {
         [Required]
         public int Id { get; set; }

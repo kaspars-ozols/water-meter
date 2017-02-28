@@ -3,26 +3,26 @@ using System.Web.Mvc;
 using WaterMeter.Core.Entities;
 using WaterMeter.Core.Persistance;
 using WaterMeter.Web.Areas.Administration.Models;
-using WaterMeter.Web.Areas.Administration.Models.Property;
+using WaterMeter.Web.Areas.Administration.Models.Meter;
 
 namespace WaterMeter.Web.Areas.Administration.Controllers
 {
     //[Authorize(Roles = "Administrator")]
     [RouteArea(nameof(Administration), AreaPrefix = "")]
-    [RoutePrefix("property")]
-    public class PropertyController : Controller
+    [RoutePrefix("meter")]
+    public class MeterController : Controller
     {
         [HttpGet]
         [Route("list")]
         public ActionResult List()
         {
-            var model = new PropertyListModel();
+            var model = new MeterListModel();
 
             using (var db = new ApplicationDbContext())
             {
                 model.Addresses = db.Properties
                     .OrderBy(x => x.Address)
-                    .Select(x => new PropertyListItemModel
+                    .Select(x => new MeterListItemModel
                     {
                         Id = x.Id,
                         Address = x.Address
@@ -37,25 +37,25 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
         [Route("create")]
         public ActionResult Create()
         {
-            var model = new PropertyCreateModel();
+            var model = new MeterCreateModel();
 
             return View(model);
         }
 
         [HttpPost]
         [Route("create")]
-        public ActionResult Create(PropertyCreateModel model)
+        public ActionResult Create(MeterCreateModel model)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new ApplicationDbContext())
                 {
-                    var property = new Property
+                    var meter = new Meter
                     {
-                        Address = model.Address
+                        Name = model.Name
                     };
 
-                    db.Properties.Add(property);
+                    db.Meters.Add(meter);
                     db.SaveChanges();
                 }
                 return RedirectToAction(nameof(List));
@@ -75,7 +75,7 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
                 if (address == null)
                     return HttpNotFound();
 
-                var model = new PropertyEditModel
+                var model = new MeterEditModel
                 {
                     Id = address.Id,
                     Address = address.Address
@@ -87,18 +87,18 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [Route("edit/{id}")]
-        public ActionResult Edit(int id, PropertyEditModel model)
+        public ActionResult Edit(int id, MeterEditModel model)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new ApplicationDbContext())
                 {
-                    var property = db.Properties.FirstOrDefault(x => x.Id == model.Id);
+                    var meter = db.Properties.FirstOrDefault(x => x.Id == model.Id);
 
-                    if (property == null)
+                    if (meter == null)
                         return HttpNotFound();
 
-                    property.Address = model.Address;
+                    meter.Address = model.Address;
 
                     db.SaveChanges();
                 }

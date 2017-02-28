@@ -1,8 +1,9 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using WaterMeter.Web;
 
-[assembly: OwinStartupAttribute(typeof(WaterMeter.Startup))]
-namespace WaterMeter
+[assembly: OwinStartup(typeof(Startup))]
+namespace WaterMeter.Web
 {
     public partial class Startup
     {

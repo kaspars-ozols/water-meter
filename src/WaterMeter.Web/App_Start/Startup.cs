@@ -3,12 +3,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
 using WaterMeter.Core.Entities;
-using WaterMeter.Models;
+using WaterMeter.Web.Models;
 
-namespace WaterMeter
+namespace WaterMeter.Web
 {
     public partial class Startup
     {
