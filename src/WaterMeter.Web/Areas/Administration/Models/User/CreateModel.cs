@@ -1,9 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-namespace WaterMeter.Web.Areas.User.Models
+namespace WaterMeter.Web.Areas.Administration.Models.User
 {
-    public class RegisterViewModel
+    public class CreateModel
     {
+        [Required]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Phone]
+        [Display(Name = "Mobile phone")]
+        public string MobilePhone { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -19,5 +36,6 @@ namespace WaterMeter.Web.Areas.User.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
     }
 }

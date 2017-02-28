@@ -1,16 +1,17 @@
 ﻿using System.Web.Mvc;
+using WaterMeter.Core.Constants;
 using WaterMeter.Web.Areas.User.Models;
 
 namespace WaterMeter.Web.Areas.User.Controllers
 {
-    //[Authorize(Roles = Role.User)]
+    [Authorize(Roles = Role.User)]
     [RouteArea(nameof(User), AreaPrefix = "")]
     [RoutePrefix("")]
-    public class DashboardController : Controller
+    public class MyPageController : Controller
     {
         [HttpGet]
         [Route("")]
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             var model = new DashboardViewModel();
 
