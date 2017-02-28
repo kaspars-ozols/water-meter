@@ -9,6 +9,5 @@ namespace WaterMeter.Web.Areas.Administration.Models.Meter
 
         [Required]
         public string Address { get; set; }
-
     }
 }

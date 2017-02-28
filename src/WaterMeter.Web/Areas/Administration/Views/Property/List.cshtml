@@ -8,22 +8,21 @@ else
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr>
-                <th>Address</th>
-                <th></th>
-            </tr>
+        <tr>
+            <th>Address</th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var property in Model.Addresses)
-            {
-                <tr>
-                    <td>@property.Address</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { Id = property.Id })</td>
-                </tr>
-            }
+        @foreach (var property in Model.Addresses)
+        {
+            <tr>
+                <td>@property.Address</td>
+                <td>@Html.ActionLink("Edit", "Edit", new {property.Id})</td>
+            </tr>
+        }
         </tbody>
     </table>
-
 }
 
 @Html.ActionLink("Add new property", "Create")

@@ -1,13 +1,13 @@
 ﻿@model WaterMeter.Web.Areas.Administration.Models.Property.PropertyCreateModel
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new {@class = "form-horizontal"}))
 {
     @Html.ValidationSummary()
 
     <div class="form-group">
-        @Html.LabelFor(x => x.Address, new { @class = "col-sm-2 control-label" })
+        @Html.LabelFor(x => x.Address, new {@class = "col-sm-2 control-label"})
         <div class="col-sm-10">
-            @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Address, new {@class = "form-control"})
         </div>
     </div>
 
