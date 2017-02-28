@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201702252334021_InitialEntities.Designer.cs">
       <DependentUpon>201702252334021_InitialEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702282339154_AddedBasicFieldsForUser.cs" />
+    <Compile Include="Migrations\201702282339154_AddedBasicFieldsForUser.Designer.cs">
+      <DependentUpon>201702282339154_AddedBasicFieldsForUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702282340039_AddedMobilePhoneForUser.cs" />
+    <Compile Include="Migrations\201702282340039_AddedMobilePhoneForUser.Designer.cs">
+      <DependentUpon>201702282340039_AddedMobilePhoneForUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\ApplicationDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +85,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702252334021_InitialEntities.resx">
       <DependentUpon>201702252334021_InitialEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702282339154_AddedBasicFieldsForUser.resx">
+      <DependentUpon>201702282339154_AddedBasicFieldsForUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702282340039_AddedMobilePhoneForUser.resx">
+      <DependentUpon>201702282340039_AddedMobilePhoneForUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
-using WaterMeter.Core.Constants;
 using WaterMeter.Core.Entities;
 using WaterMeter.Web.Areas.Administration.Models.User;
 
@@ -47,6 +46,11 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
                 if (result.Succeeded)
                 {
                     return RedirectToAction("List", "Users");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error);
                 }
             }
 
