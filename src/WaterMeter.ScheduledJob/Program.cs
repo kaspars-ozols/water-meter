@@ -1,4 +1,6 @@
 ﻿using Microsoft.Azure.WebJobs;
+using WaterMeter.ScheduledJob.DependencyResolution;
+using WaterMeter.ScheduledJob.Infrastructure;
 
 namespace WaterMeter.ScheduledJob
 {
@@ -9,7 +11,11 @@ namespace WaterMeter.ScheduledJob
         // AzureWebJobsDashboard and AzureWebJobsStorage
         public static void Main()
         {
-            var config = new JobHostConfiguration();
+            var container = IoC.Initialize();
+            var config = new JobHostConfiguration
+            {
+                JobActivator = new ContainerJobActivator(container)
+            };
 
             if (config.IsDevelopment)
                 config.UseDevelopmentSettings();
