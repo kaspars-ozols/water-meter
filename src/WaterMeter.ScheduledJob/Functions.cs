@@ -1,15 +1,15 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.Azure.WebJobs;
 
 namespace WaterMeter.ScheduledJob
 {
     public class Functions
     {
-        // This function will get triggered/executed when a new message is written 
-        // on an Azure Queue called queue.
-        public static void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+        // Runs once every 30 seconds
+        public static void TimerJob([TimerTrigger("00:00:30")] TimerInfo timer)
         {
-            log.WriteLine(message);
+            Console.WriteLine("Timer job fired!");
         }
     }
 }
