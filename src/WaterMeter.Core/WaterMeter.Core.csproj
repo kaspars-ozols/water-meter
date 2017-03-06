@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201702282344122_AddingDefaultRoles.Designer.cs">
       <DependentUpon>201702282344122_AddingDefaultRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703062200497_ChangesInDbModel.cs" />
+    <Compile Include="Migrations\201703062200497_ChangesInDbModel.Designer.cs">
+      <DependentUpon>201703062200497_ChangesInDbModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\ApplicationDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702282344122_AddingDefaultRoles.resx">
       <DependentUpon>201702282344122_AddingDefaultRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703062200497_ChangesInDbModel.resx">
+      <DependentUpon>201703062200497_ChangesInDbModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
