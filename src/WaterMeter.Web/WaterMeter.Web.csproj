@@ -195,6 +195,7 @@
     <Compile Include="Areas\Administration\Models\Meter\MeterListItemModel.cs" />
     <Compile Include="Areas\Administration\Models\Meter\MeterListModel.cs" />
     <Compile Include="Areas\Administration\Models\User\CreateModel.cs" />
+    <Compile Include="Areas\Public\Controllers\LandingController.cs" />
     <Compile Include="Areas\Public\Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\Administration\Controllers\PropertyController.cs" />
@@ -260,6 +261,9 @@
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Meter\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Meter\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Meter\List.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

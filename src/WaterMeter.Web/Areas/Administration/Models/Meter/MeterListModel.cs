@@ -4,6 +4,6 @@ namespace WaterMeter.Web.Areas.Administration.Models.Meter
 {
     public class MeterListModel
     {
-        public List<MeterListItemModel> Addresses { get; set; } = new List<MeterListItemModel>();
+        public List<MeterListItemModel> Meters { get; set; } = new List<MeterListItemModel>();
     }
 }

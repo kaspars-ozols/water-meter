@@ -20,12 +20,12 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
 
             using (var db = new ApplicationDbContext())
             {
-                model.Addresses = db.Properties
-                    .OrderBy(x => x.Address)
+                model.Meters = db.Meters
                     .Select(x => new MeterListItemModel
                     {
                         Id = x.Id,
-                        Address = x.Address
+                        SerialNumber = x.SerialNumber,
+                        PropertyName = x.Property.Name
                     })
                     .ToList();
             }

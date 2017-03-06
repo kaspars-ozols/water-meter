@@ -3,6 +3,7 @@
     public class MeterListItemModel
     {
         public int Id { get; set; }
-        public string Address { get; set; }
+        public string SerialNumber { get; set; }
+        public string PropertyName { get; set; }
     }
 }

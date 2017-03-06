@@ -1,6 +1,9 @@
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using WaterMeter.Web.Areas.User.Models;
 
 namespace WaterMeter.Web.Areas.Public.Controllers
@@ -10,12 +13,14 @@ namespace WaterMeter.Web.Areas.Public.Controllers
     public class AccountController : Controller
     {
         private readonly ApplicationSignInManager _signInManager;
+        private readonly IAuthenticationManager _authenticationManager;
         private ApplicationUserManager _userManager;
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IAuthenticationManager authenticationManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _authenticationManager = authenticationManager;
         }
 
         [HttpGet]
@@ -47,6 +52,16 @@ namespace WaterMeter.Web.Areas.Public.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        [Route("logout")]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOut()
+        {
+            _authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
+            return RedirectToAction("Index", "Landing", new { Area = "Public" });
         }
 
         ////
@@ -326,15 +341,7 @@ namespace WaterMeter.Web.Areas.Public.Controllers
         //    return View(model);
         //}
 
-        ////
-        //// POST: /Account/LogOff
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult LogOff()
-        //{
-        //    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-        //    return RedirectToAction("Index", "MyPage");
-        //}
+
 
         ////
         //// GET: /Account/ExternalLoginFailure
