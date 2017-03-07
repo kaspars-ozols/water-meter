@@ -1,4 +1,5 @@
 using StructureMap;
+using WaterMeter.ScheduledJob.Rendering;
 
 namespace WaterMeter.ScheduledJob.DependencyResolution
 {
@@ -12,6 +13,8 @@ namespace WaterMeter.ScheduledJob.DependencyResolution
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
+
+            For<IRenderer>().Use<RazorRenderer>();
         }
     }
 }

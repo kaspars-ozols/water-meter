@@ -1,0 +1,39 @@
+﻿@model WaterMeter.ScheduledJob.Models.ReminderModel
+
+<html>
+<head>
+    <title>Missing water meter readings</title>
+</head>
+<body>
+    <p>
+        Hello, @Model.FirstName @Model.LastName!
+    </p>
+
+    <p>
+        Meter readings are missing for the following properties:
+    </p>
+
+    @foreach (var property in Model.Properties)
+    {
+        <h2>@property.Name (@property.Address)</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Serial number</th>
+                <th>Last reading</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var meter in property.Meters)
+            {
+                <tr>
+                    <td>@meter.SerialNumber</td>
+                    <td>@meter.LastReadingValue (@meter.LastReadingDate.ToString("dd.MM.yyyy"))</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    <a href="@Model.Link">Click here to enter missing readings</a>
+</body>
+</html>
