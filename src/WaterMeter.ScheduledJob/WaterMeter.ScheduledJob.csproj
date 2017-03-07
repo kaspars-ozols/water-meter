@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WaterMeter.ScheduledJob</RootNamespace>
     <AssemblyName>WaterMeter.ScheduledJob</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -117,9 +118,9 @@
   <ItemGroup>
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
-    <Compile Include="Infrastructure\IoCJobActivator.cs" />
+    <Compile Include="Infrastructure\ContainerJobActivator.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Jobs\NotificationSendingJob.cs" />
+    <Compile Include="Jobs\RemindersSendingJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
