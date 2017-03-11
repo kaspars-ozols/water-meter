@@ -268,7 +268,7 @@
     <Content Include="appSettings.private.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="appSettings.sample.config">
+    <Content Include="appSettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
