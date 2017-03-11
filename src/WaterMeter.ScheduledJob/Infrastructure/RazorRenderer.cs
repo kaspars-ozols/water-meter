@@ -6,7 +6,7 @@ using RazorEngine.Templating;
 
 namespace WaterMeter.ScheduledJob.Rendering
 {
-   public  class RazorRenderer: IRenderer
+   public  class RazorRenderer
     {
         public string Render<T>(string templateName, T model)
         {

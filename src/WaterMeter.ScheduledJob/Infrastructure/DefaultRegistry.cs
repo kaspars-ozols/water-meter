@@ -13,8 +13,6 @@ namespace WaterMeter.ScheduledJob.DependencyResolution
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
-
-            For<IRenderer>().Use<RazorRenderer>();
         }
     }
 }

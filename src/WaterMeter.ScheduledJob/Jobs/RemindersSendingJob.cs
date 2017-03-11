@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using RazorEngine;
-using RazorEngine.Templating;
-using WaterMeter.Core.Constants;
 using WaterMeter.Core.Persistance;
-using WaterMeter.ScheduledJob.Infrastructure;
 using WaterMeter.ScheduledJob.Models;
 using WaterMeter.ScheduledJob.Rendering;
 

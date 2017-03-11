@@ -133,12 +133,14 @@
     <Compile Include="Infrastructure\ContainerJobActivator.cs" />
     <Compile Include="Models\MeterModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
-    <Compile Include="Rendering\IRenderer.cs" />
-    <Compile Include="Rendering\RazorRenderer.cs" />
+    <Compile Include="Infrastructure\RazorRenderer.cs" />
     <Compile Include="Models\ReminderModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Jobs\RemindersSendingJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Templates\SmsReminder.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\EmailReminder.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
