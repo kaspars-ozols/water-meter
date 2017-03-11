@@ -131,6 +131,12 @@
     <None Include="appSettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="connectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="connectionStrings.private.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="appSettings.private.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
