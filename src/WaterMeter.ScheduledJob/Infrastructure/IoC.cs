@@ -1,4 +1,5 @@
 ﻿using StructureMap;
+using WaterMeter.ScheduledJob.Infrastructure;
 
 namespace WaterMeter.ScheduledJob.DependencyResolution
 {

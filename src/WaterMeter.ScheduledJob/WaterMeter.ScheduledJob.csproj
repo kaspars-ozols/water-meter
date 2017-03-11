@@ -128,15 +128,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="appSettings.sample.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="appSettings.private.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="Infrastructure\DefaultRegistry.cs" />
     <Compile Include="Infrastructure\IoC.cs" />
     <Compile Include="Infrastructure\ContainerJobActivator.cs" />
+    <Compile Include="Jobs\MailgunConfig.cs" />
     <Compile Include="Models\MeterModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
-    <Compile Include="Infrastructure\RazorRenderer.cs" />
     <Compile Include="Models\ReminderModel.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Jobs\RemindersSendingJob.cs" />
+    <Compile Include="Jobs\ReminderJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Templates\SmsReminder.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

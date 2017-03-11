@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Razor;
 using StructureMap;
-using WaterMeter.ScheduledJob.Rendering;
 using WaterMeter.Services.Mail;
+using WaterMeter.Services.Templating;
 
-namespace WaterMeter.ScheduledJob.DependencyResolution
+namespace WaterMeter.ScheduledJob.Infrastructure
 {
     public class DefaultRegistry : Registry
     {
@@ -16,6 +17,7 @@ namespace WaterMeter.ScheduledJob.DependencyResolution
                 });
 
             For<IMailService>().Use<MailgunMailService>();
+            For<ITemplateRenderer>().Use<RazorTemplateRenderer>();
         }
     }
 }

@@ -4,21 +4,19 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using WaterMeter.Core.Persistance;
 using WaterMeter.ScheduledJob.Models;
-using WaterMeter.ScheduledJob.Rendering;
 using WaterMeter.Services.Mail;
+using WaterMeter.Services.Templating;
 
 namespace WaterMeter.ScheduledJob.Jobs
 {
-    public class RemindersSendingJob
+    public class ReminderJob
     {
-        private readonly ApplicationDbContext _dbContext;
-        private readonly RazorRenderer _razorRenderer;
+        private readonly ITemplateRenderer _templateRenderer;
         private readonly IMailService _mailService;
 
-        public RemindersSendingJob(ApplicationDbContext dbContext, RazorRenderer razorRenderer, IMailService mailService)
+        public ReminderJob(ApplicationDbContext dbContext, ITemplateRenderer templateRenderer, IMailService mailService)
         {
-            _dbContext = dbContext;
-            _razorRenderer = razorRenderer;
+            _templateRenderer = templateRenderer;
             _mailService = mailService;
         }
 
@@ -48,21 +46,16 @@ namespace WaterMeter.ScheduledJob.Jobs
                 }
             };
 
-            var email = RenderEmailReminder(model);
-
             var mailMessage = new MailMessage
             {
-                From = "kaspars.ozols.private@gmail.com",
-                To = "kaspars.ozols.private@gmail.com",
-                Subject = "Testing emails",
-                Body = "Email body"
+                From = ReminderJobConfig.Sender,
+                // TODO: replace with user email
+                To = ReminderJobConfig.Sender,
+                Subject = "Reminder",
+                Body = _templateRenderer.Render(@"Templates\EmailReminder.cshtml", model)
             };
 
             _mailService.Send(mailMessage);
-
-            Console.ReadLine();
-
-            Console.WriteLine(email);
 
             //if (!timer.IsPastDue)
             //{
@@ -90,9 +83,5 @@ namespace WaterMeter.ScheduledJob.Jobs
             return Task.CompletedTask;
         }
 
-        private string RenderEmailReminder(ReminderModel model)
-        {
-            return _razorRenderer.Render("EmailReminder", model);
-        }
     }
 }

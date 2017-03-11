@@ -265,6 +265,12 @@
     <Content Include="Areas\Administration\Views\Meter\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Meter\List.cshtml" />
     <Content Include="Properties\webjobs-list.json" />
+    <Content Include="appSettings.private.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appSettings.sample.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

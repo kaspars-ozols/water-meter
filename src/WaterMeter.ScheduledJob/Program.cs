@@ -21,7 +21,7 @@ namespace WaterMeter.ScheduledJob
 
 
 #if (DEBUG)
-            var job = config.JobActivator.CreateInstance<RemindersSendingJob>();
+            var job = config.JobActivator.CreateInstance<ReminderJob>();
             job.Execute(null);
             return;
 #endif
