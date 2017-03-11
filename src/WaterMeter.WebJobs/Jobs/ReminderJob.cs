@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using WaterMeter.Core.Persistance;
-using WaterMeter.ScheduledJob.Models;
 using WaterMeter.Services.Mail;
 using WaterMeter.Services.Templating;
+using WaterMeter.WebJobs.Models;
 
-namespace WaterMeter.ScheduledJob.Jobs
+namespace WaterMeter.WebJobs.Jobs
 {
     public class ReminderJob
     {

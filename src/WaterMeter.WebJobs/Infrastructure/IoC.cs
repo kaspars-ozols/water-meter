@@ -1,6 +1,6 @@
 ﻿using StructureMap;
 
-namespace WaterMeter.ScheduledJob.Infrastructure
+namespace WaterMeter.WebJobs.Infrastructure
 {
     public static class IoC
     {

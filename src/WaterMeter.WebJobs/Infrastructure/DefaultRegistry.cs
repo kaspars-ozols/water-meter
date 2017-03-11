@@ -2,7 +2,7 @@ using StructureMap;
 using WaterMeter.Services.Mail;
 using WaterMeter.Services.Templating;
 
-namespace WaterMeter.ScheduledJob.Infrastructure
+namespace WaterMeter.WebJobs.Infrastructure
 {
     public class DefaultRegistry : Registry
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WaterMeter.ScheduledJob.Models
+namespace WaterMeter.WebJobs.Models
 {
     public class ReminderModel
     {

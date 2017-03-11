@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WaterMeter.ScheduledJob.Models
+namespace WaterMeter.WebJobs.Models
 {
     public class MeterModel
     {

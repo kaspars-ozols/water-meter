@@ -1,6 +1,6 @@
 ﻿using WaterMeter.Core.Helpers;
 
-namespace WaterMeter.ScheduledJob.Jobs
+namespace WaterMeter.WebJobs.Jobs
 {
     public static class ReminderJobConfig
     {

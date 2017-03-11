@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs.Host;
 using StructureMap;
 
-namespace WaterMeter.ScheduledJob.Infrastructure
+namespace WaterMeter.WebJobs.Infrastructure
 {
     public class ContainerJobActivator : IJobActivator
     {

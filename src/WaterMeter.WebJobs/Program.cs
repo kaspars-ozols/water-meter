@@ -1,8 +1,8 @@
 ﻿using Microsoft.Azure.WebJobs;
-using WaterMeter.ScheduledJob.Infrastructure;
-using WaterMeter.ScheduledJob.Jobs;
+using WaterMeter.WebJobs.Infrastructure;
+using WaterMeter.WebJobs.Jobs;
 
-namespace WaterMeter.ScheduledJob
+namespace WaterMeter.WebJobs
 {
     // To learn more about Microsoft Azure WebJobs SDK, please see https://go.microsoft.com/fwlink/?LinkID=320976
     internal static class Program
