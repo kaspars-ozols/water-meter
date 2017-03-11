@@ -1,5 +1,6 @@
 using StructureMap;
 using WaterMeter.ScheduledJob.Rendering;
+using WaterMeter.Services.Mail;
 
 namespace WaterMeter.ScheduledJob.DependencyResolution
 {
@@ -13,6 +14,8 @@ namespace WaterMeter.ScheduledJob.DependencyResolution
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
+
+            For<IMailService>().Use<MailgunMailService>();
         }
     }
 }

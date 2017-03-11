@@ -155,6 +155,10 @@
       <Project>{EFFFDA0C-9640-4DFE-8D43-F8BEF59BB812}</Project>
       <Name>WaterMeter.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WaterMeter.Services\WaterMeter.Services.csproj">
+      <Project>{CE67E150-F1D2-4F95-8D9A-5AE60FA02F10}</Project>
+      <Name>WaterMeter.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

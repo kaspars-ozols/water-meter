@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using WaterMeter.ScheduledJob.DependencyResolution;
 using WaterMeter.ScheduledJob.Infrastructure;
+using WaterMeter.ScheduledJob.Jobs;
 
 namespace WaterMeter.ScheduledJob
 {
@@ -17,9 +18,18 @@ namespace WaterMeter.ScheduledJob
                 JobActivator = new ContainerJobActivator(container)
             };
 
+
+
+#if (DEBUG)
+            var job = config.JobActivator.CreateInstance<RemindersSendingJob>();
+            job.Execute(null);
+            return;
+#endif
+
+
             if (config.IsDevelopment)
                 config.UseDevelopmentSettings();
-            
+
             config.UseTimers();
 
             var host = new JobHost(config);

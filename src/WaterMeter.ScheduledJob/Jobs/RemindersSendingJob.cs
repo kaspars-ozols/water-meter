@@ -5,6 +5,7 @@ using Microsoft.Azure.WebJobs;
 using WaterMeter.Core.Persistance;
 using WaterMeter.ScheduledJob.Models;
 using WaterMeter.ScheduledJob.Rendering;
+using WaterMeter.Services.Mail;
 
 namespace WaterMeter.ScheduledJob.Jobs
 {
@@ -12,14 +13,16 @@ namespace WaterMeter.ScheduledJob.Jobs
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly RazorRenderer _razorRenderer;
+        private readonly IMailService _mailService;
 
-        public RemindersSendingJob(ApplicationDbContext dbContext, RazorRenderer razorRenderer)
+        public RemindersSendingJob(ApplicationDbContext dbContext, RazorRenderer razorRenderer, IMailService mailService)
         {
             _dbContext = dbContext;
             _razorRenderer = razorRenderer;
+            _mailService = mailService;
         }
 
-        public Task Run([TimerTrigger("00:00:10")] TimerInfo timer)
+        public Task Execute([TimerTrigger("00:00:10")] TimerInfo timer)
         {
             var model = new ReminderModel
             {
@@ -47,6 +50,17 @@ namespace WaterMeter.ScheduledJob.Jobs
 
             var email = RenderEmailReminder(model);
 
+            var mailMessage = new MailMessage
+            {
+                From = "kaspars.ozols.private@gmail.com",
+                To = "kaspars.ozols.private@gmail.com",
+                Subject = "Testing emails",
+                Body = "Email body"
+            };
+
+            _mailService.Send(mailMessage);
+
+            Console.ReadLine();
 
             Console.WriteLine(email);
 
