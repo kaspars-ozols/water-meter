@@ -145,7 +145,7 @@
     <Compile Include="Infrastructure\DefaultRegistry.cs" />
     <Compile Include="Infrastructure\IoC.cs" />
     <Compile Include="Infrastructure\ContainerJobActivator.cs" />
-    <Compile Include="Jobs\MailgunConfig.cs" />
+    <Compile Include="Jobs\ReminderJobConfig.cs" />
     <Compile Include="Models\MeterModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
     <Compile Include="Models\ReminderModel.cs" />

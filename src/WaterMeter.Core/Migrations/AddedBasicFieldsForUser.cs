@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace WaterMeter.Core.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class AddedBasicFieldsForUser : DbMigration
     {
         public override void Up()

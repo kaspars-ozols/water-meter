@@ -73,7 +73,9 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
                 var address = db.Properties.FirstOrDefault(x => x.Id == id);
 
                 if (address == null)
+                {
                     return HttpNotFound();
+                }
 
                 var model = new PropertyEditModel
                 {
@@ -96,7 +98,9 @@ namespace WaterMeter.Web.Areas.Administration.Controllers
                     var property = db.Properties.FirstOrDefault(x => x.Id == model.Id);
 
                     if (property == null)
+                    {
                         return HttpNotFound();
+                    }
 
                     property.Address = model.Address;
 

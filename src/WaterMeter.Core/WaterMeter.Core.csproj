@@ -65,25 +65,25 @@
     <Compile Include="Entities\Meter.cs" />
     <Compile Include="Entities\MeterReading.cs" />
     <Compile Include="Entities\Property.cs" />
-    <Compile Include="Migrations\201702252334021_InitialEntities.cs" />
-    <Compile Include="Migrations\201702252334021_InitialEntities.Designer.cs">
-      <DependentUpon>201702252334021_InitialEntities.cs</DependentUpon>
+    <Compile Include="Migrations\InitialEntities.cs" />
+    <Compile Include="Migrations\InitialEntities.Designer.cs">
+      <DependentUpon>InitialEntities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702282339154_AddedBasicFieldsForUser.cs" />
-    <Compile Include="Migrations\201702282339154_AddedBasicFieldsForUser.Designer.cs">
-      <DependentUpon>201702282339154_AddedBasicFieldsForUser.cs</DependentUpon>
+    <Compile Include="Migrations\AddedBasicFieldsForUser.cs" />
+    <Compile Include="Migrations\AddedBasicFieldsForUser.Designer.cs">
+      <DependentUpon>AddedBasicFieldsForUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702282340039_AddedMobilePhoneForUser.cs" />
-    <Compile Include="Migrations\201702282340039_AddedMobilePhoneForUser.Designer.cs">
-      <DependentUpon>201702282340039_AddedMobilePhoneForUser.cs</DependentUpon>
+    <Compile Include="Migrations\AddedMobilePhoneForUser.cs" />
+    <Compile Include="Migrations\AddedMobilePhoneForUser.Designer.cs">
+      <DependentUpon>AddedMobilePhoneForUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702282344122_AddingDefaultRoles.cs" />
-    <Compile Include="Migrations\201702282344122_AddingDefaultRoles.Designer.cs">
-      <DependentUpon>201702282344122_AddingDefaultRoles.cs</DependentUpon>
+    <Compile Include="Migrations\AddingDefaultRoles.cs" />
+    <Compile Include="Migrations\AddingDefaultRoles.Designer.cs">
+      <DependentUpon>AddingDefaultRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703062200497_ChangesInDbModel.cs" />
-    <Compile Include="Migrations\201703062200497_ChangesInDbModel.Designer.cs">
-      <DependentUpon>201703062200497_ChangesInDbModel.cs</DependentUpon>
+    <Compile Include="Migrations\ChangesInDbModel.cs" />
+    <Compile Include="Migrations\ChangesInDbModel.Designer.cs">
+      <DependentUpon>ChangesInDbModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistance\ApplicationDbContext.cs" />
@@ -94,20 +94,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702252334021_InitialEntities.resx">
-      <DependentUpon>201702252334021_InitialEntities.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\InitialEntities.resx">
+      <DependentUpon>InitialEntities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702282339154_AddedBasicFieldsForUser.resx">
-      <DependentUpon>201702282339154_AddedBasicFieldsForUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedBasicFieldsForUser.resx">
+      <DependentUpon>AddedBasicFieldsForUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702282340039_AddedMobilePhoneForUser.resx">
-      <DependentUpon>201702282340039_AddedMobilePhoneForUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedMobilePhoneForUser.resx">
+      <DependentUpon>AddedMobilePhoneForUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702282344122_AddingDefaultRoles.resx">
-      <DependentUpon>201702282344122_AddingDefaultRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddingDefaultRoles.resx">
+      <DependentUpon>AddingDefaultRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703062200497_ChangesInDbModel.resx">
-      <DependentUpon>201703062200497_ChangesInDbModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ChangesInDbModel.resx">
+      <DependentUpon>ChangesInDbModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

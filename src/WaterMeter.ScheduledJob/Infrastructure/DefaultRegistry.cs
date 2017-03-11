@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Razor;
 using StructureMap;
 using WaterMeter.Services.Mail;
 using WaterMeter.Services.Templating;

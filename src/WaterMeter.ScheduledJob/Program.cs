@@ -1,5 +1,4 @@
 ﻿using Microsoft.Azure.WebJobs;
-using WaterMeter.ScheduledJob.DependencyResolution;
 using WaterMeter.ScheduledJob.Infrastructure;
 using WaterMeter.ScheduledJob.Jobs;
 
@@ -28,7 +27,9 @@ namespace WaterMeter.ScheduledJob
 
 
             if (config.IsDevelopment)
+            {
                 config.UseDevelopmentSettings();
+            }
 
             config.UseTimers();
 

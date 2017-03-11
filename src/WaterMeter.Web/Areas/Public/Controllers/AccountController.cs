@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -57,7 +56,9 @@ namespace WaterMeter.Web.Areas.Public.Controllers
                             .ToList()?? new List<string>();
 
                         if (roles.Contains(Role.Administrator))
+                        {
                             return RedirectToAction("Dashboard", "Dashboard", new {Area = "Administration"});
+                        }
 
 
                         return new RedirectResult(model.ReturnUrl);

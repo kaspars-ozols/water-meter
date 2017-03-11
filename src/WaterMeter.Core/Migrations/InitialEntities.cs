@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace WaterMeter.Core.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class InitialEntities : DbMigration
     {
         public override void Up()
@@ -14,7 +13,7 @@ namespace WaterMeter.Core.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         MeterId = c.Int(nullable: false),
                         Time = c.DateTime(nullable: false),
-                        Value = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Value = c.Decimal(nullable: false, precision: 18, scale: 2)
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -24,7 +23,7 @@ namespace WaterMeter.Core.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        PropertyId = c.Int(nullable: false),
+                        PropertyId = c.Int(nullable: false)
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -33,7 +32,7 @@ namespace WaterMeter.Core.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Address = c.String(),
+                        Address = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -42,7 +41,7 @@ namespace WaterMeter.Core.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false, maxLength: 256),
+                        Name = c.String(nullable: false, maxLength: 256)
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
@@ -52,7 +51,7 @@ namespace WaterMeter.Core.Migrations
                 c => new
                     {
                         UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128)
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
@@ -75,7 +74,7 @@ namespace WaterMeter.Core.Migrations
                         LockoutEndDateUtc = c.DateTime(),
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 256),
+                        UserName = c.String(nullable: false, maxLength: 256)
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
@@ -87,7 +86,7 @@ namespace WaterMeter.Core.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         UserId = c.String(nullable: false, maxLength: 128),
                         ClaimType = c.String(),
-                        ClaimValue = c.String(),
+                        ClaimValue = c.String()
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -99,7 +98,7 @@ namespace WaterMeter.Core.Migrations
                     {
                         LoginProvider = c.String(nullable: false, maxLength: 128),
                         ProviderKey = c.String(nullable: false, maxLength: 128),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(nullable: false, maxLength: 128)
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
