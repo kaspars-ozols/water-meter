@@ -20,7 +20,7 @@ namespace WaterMeter.Services.Mail
             request.AddParameter("from", mailMessage.From);
             request.AddParameter("to", mailMessage.To);
             request.AddParameter("subject", mailMessage.Subject);
-            request.AddParameter("text", mailMessage.Body);
+            request.AddParameter("html", mailMessage.Body);
             request.Method = Method.POST;
 
             var response = client.Execute(request);
