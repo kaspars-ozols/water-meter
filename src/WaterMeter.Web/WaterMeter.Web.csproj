@@ -266,16 +266,18 @@
     <Content Include="Areas\Administration\Views\Meter\List.cshtml" />
     <Content Include="Properties\webjobs-list.json" />
     <Content Include="appSettings.private.config">
+      <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="appSettings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="connectionStrings.private.config">
+      <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="connectionStrings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Web.config</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

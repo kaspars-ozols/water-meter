@@ -129,15 +129,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="appSettings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>App.config</DependentUpon>
     </None>
     <None Include="connectionStrings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>App.config</DependentUpon>
     </None>
     <None Include="connectionStrings.private.config">
+      <DependentUpon>App.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="appSettings.private.config">
+      <DependentUpon>App.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="Infrastructure\DefaultRegistry.cs" />
