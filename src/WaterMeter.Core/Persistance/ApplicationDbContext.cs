@@ -8,7 +8,7 @@ namespace WaterMeter.Core.Persistance
     {
         public ApplicationDbContext()
         {
-            Configuration.LazyLoadingEnabled = false;
+            //Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Property> Properties { get; set; }

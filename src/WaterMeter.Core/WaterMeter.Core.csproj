@@ -65,6 +65,10 @@
     <Compile Include="Entities\Meter.cs" />
     <Compile Include="Entities\MeterReading.cs" />
     <Compile Include="Entities\Property.cs" />
+    <Compile Include="Migrations\201703142141560_RemasteredNavigationProperties.cs" />
+    <Compile Include="Migrations\201703142141560_RemasteredNavigationProperties.Designer.cs">
+      <DependentUpon>201703142141560_RemasteredNavigationProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\InitialEntities.cs" />
     <Compile Include="Migrations\InitialEntities.Designer.cs">
       <DependentUpon>InitialEntities.cs</DependentUpon>
@@ -94,6 +98,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703142141560_RemasteredNavigationProperties.resx">
+      <DependentUpon>201703142141560_RemasteredNavigationProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\InitialEntities.resx">
       <DependentUpon>InitialEntities.cs</DependentUpon>
     </EmbeddedResource>
