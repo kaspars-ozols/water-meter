@@ -34,5 +34,10 @@ namespace WaterMeter.Web.Features.Administrator.Users
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "Administrator")]
+        public bool IsAdministrator{ get; set; }
+        [Display(Name = "Accountant")]
+        public bool IsAccountant{ get; set; }
+
     }
 }

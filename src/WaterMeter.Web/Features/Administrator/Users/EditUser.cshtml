@@ -1,4 +1,5 @@
-﻿@using WaterMeter.Web.Features.Administrator.Users
+﻿@using WaterMeter.Core.Constants
+@using WaterMeter.Web.Features.Administrator.Users
 @model WaterMeter.Web.Features.Administrator.Users.EditModel
 
 <h1>Edit user</h1>
@@ -10,31 +11,49 @@
 
     @Html.HiddenFor(x => x.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.FirstName)
-        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.LastName)
-        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.MobilePhone)
-        @Html.TextBoxFor(m => m.MobilePhone, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email)
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-    </div>
+    <section>
+        <h2>Main info</h2>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MobilePhone)
+            @Html.TextBoxFor(m => m.MobilePhone, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword)
-        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword)
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </section>
+    <section>
+        <h2>Roles</h2>
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(m => m.IsAdministrator)
+                @Role.Administrator
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(m => m.IsAccountant)
+                @Role.Accountant
+            </label>
+        </div>
+    </section>
 
     <div class="form-group">
         @(Html.ActionLink<UserController>("Cancel", x => x.ListUsers(), null, new { @class = "btn btn-default" }))

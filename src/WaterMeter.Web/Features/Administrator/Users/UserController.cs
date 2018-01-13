@@ -85,16 +85,20 @@ namespace WaterMeter.Web.Features.Administrator.Users
 
         [HttpGet]
         [Route("edit/{id}")]
-        public ActionResult EditUser(string id)
+        public async Task<ActionResult> EditUser(string id)
         {
             var user = GetUserOrThrow(id);
+            var roles = await _userManager.GetRolesAsync(id);
+
             var model = new EditModel
             {
                 Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 MobilePhone = user.MobilePhone,
-                Email = user.Email
+                Email = user.Email,
+                IsAdministrator = roles.Contains(Role.Administrator),
+                IsAccountant = roles.Contains(Role.Accountant)
             };
 
             return View(nameof(EditUser), model);
@@ -105,15 +109,11 @@ namespace WaterMeter.Web.Features.Administrator.Users
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EditUser(string id, EditModel model)
         {
-            //if (model.Password != model.ConfirmPassword)
-            //{
-            //    ModelState.AddModelError(string.Empty, "Passwords must match");
-            //}
-
-
             if (ModelState.IsValid)
             {
                 var user = GetUserOrThrow(id);
+                var roles = await _userManager.GetRolesAsync(user.Id);
+
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
                 user.MobilePhone = model.MobilePhone;
@@ -124,6 +124,36 @@ namespace WaterMeter.Web.Features.Administrator.Users
                 {
                     await _userManager.UpdateAsync(user)
                 };
+
+                if (model.IsAdministrator)
+                {
+                    if (!roles.Contains(Role.Administrator))
+                    {
+                        results.Add(await _userManager.AddToRoleAsync(user.Id, Role.Administrator));
+                    }
+                }
+                else
+                {
+                    if (roles.Contains(Role.Administrator))
+                    {
+                        results.Add(await _userManager.RemoveFromRoleAsync(user.Id, Role.Administrator));
+                    }
+                }
+
+                if (model.IsAccountant)
+                {
+                    if (!roles.Contains(Role.Accountant))
+                    {
+                        results.Add(await _userManager.AddToRoleAsync(user.Id, Role.Accountant));
+                    }
+                }
+                else
+                {
+                    if (roles.Contains(Role.Accountant))
+                    {
+                        results.Add(await _userManager.RemoveFromRoleAsync(user.Id, Role.Accountant));
+                    }
+                }
 
                 if (!string.IsNullOrEmpty(model.Password))
                 {
@@ -157,7 +187,7 @@ namespace WaterMeter.Web.Features.Administrator.Users
             {
                 Id = user.Id,
                 FirstName = user.FirstName,
-                LastName = user.LastName,
+                LastName = user.LastName
             };
 
             return View(nameof(DeleteUser), model);
