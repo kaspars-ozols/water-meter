@@ -1,0 +1,19 @@
+﻿@using WaterMeter.Web.Features.Administrator.Properties
+@model WaterMeter.Web.Features.Administrator.Properties.PropertyCreateModel
+
+<h1>Create property</h1>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Address)
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @(Html.ActionLink<PropertyController>("Cancel", x => x.ListProperties(), null, new { @class = "btn btn-default" }))
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+}

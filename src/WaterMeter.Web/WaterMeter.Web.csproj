@@ -17,7 +17,7 @@
     <AssemblyName>WaterMeter.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -188,16 +188,19 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
-    <Compile Include="Areas222\Administration\Controllers\MeterController.cs" />
-    <Compile Include="Areas222\Administration\Controllers\UserController.cs" />
-    <Compile Include="Areas222\Administration\Models\Meter\MeterCreateModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Meter\MeterEditModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Meter\MeterListItemModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Meter\MeterListModel.cs" />
-    <Compile Include="Areas222\Administration\Models\User\CreateModel.cs" />
-    <Compile Include="Features\Account\AccountController.cs" />
+    <Compile Include="Features\Administrator\Dashboard\DashboardController.cs" />
+    <Compile Include="Features\Administrator\Meters\MeterController.cs" />
+    <Compile Include="Features\Administrator\Users\UserController.cs" />
+    <Compile Include="Features\Administrator\Meters\MeterCreateModel.cs" />
+    <Compile Include="Features\Administrator\Meters\MeterEditModel.cs" />
+    <Compile Include="Features\Administrator\Meters\MeterListItemModel.cs" />
+    <Compile Include="Features\Administrator\Meters\MeterListModel.cs" />
+    <Compile Include="Features\Administrator\Users\CreateModel.cs" />
+    <Compile Include="Features\Shared\Profile\LoginController.cs" />
+    <Compile Include="Features\Shared\Profile\ProfileViewModel.cs" />
+    <Compile Include="Features\Shared\Login\LoginController.cs" />
     <Compile Include="Areas222\User\Controllers\ManageController.cs" />
-    <Compile Include="Areas222\Administration\Controllers\PropertyController.cs" />
+    <Compile Include="Features\Administrator\Properties\PropertyController.cs" />
     <Compile Include="Areas222\User\Controllers\MyPageController.cs" />
     <Compile Include="Areas222\User\Models\DashboardViewModel.cs" />
     <Compile Include="DependencyResolution\ControllerConvention.cs" />
@@ -205,7 +208,9 @@
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
     <Compile Include="DependencyResolution\StructureMapScopeModule.cs" />
+    <Compile Include="Features\Shared\Logout\LogoutController.cs" />
     <Compile Include="Features\RootController.cs" />
+    <Compile Include="Features\User\Overview\OverviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,13 +223,13 @@
     <Compile Include="Areas222\User\Models\FactorViewModel.cs" />
     <Compile Include="Areas222\User\Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Areas222\User\Models\ForgotViewModel.cs" />
-    <Compile Include="Features\Account\LoginViewModel.cs" />
+    <Compile Include="Features\Shared\Login\LoginViewModel.cs" />
     <Compile Include="Areas222\User\Models\ManageLoginsViewModel.cs" />
     <Compile Include="Areas222\User\Models\IndexViewModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Property\PropertyCreateModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Property\PropertyEditModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Property\PropertyListItemModel.cs" />
-    <Compile Include="Areas222\Administration\Models\Property\PropertyListModel.cs" />
+    <Compile Include="Features\Administrator\Properties\PropertyCreateModel.cs" />
+    <Compile Include="Features\Administrator\Properties\PropertyEditModel.cs" />
+    <Compile Include="Features\Administrator\Properties\PropertyListItemModel.cs" />
+    <Compile Include="Features\Administrator\Properties\PropertyListModel.cs" />
     <Compile Include="Areas222\User\Models\ResetPasswordViewModel.cs" />
     <Compile Include="Areas222\User\Models\SendCodeViewModel.cs" />
     <Compile Include="Areas222\User\Models\SetPasswordViewModel.cs" />
@@ -235,6 +240,7 @@
     <Compile Include="Infrastructure\MVC\ControllerExtensions.cs" />
     <Compile Include="Infrastructure\MVC\DictionaryExtensions.cs" />
     <Compile Include="Infrastructure\MVC\HtmlAttributesExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\MVC\UrlHelperExtensions.cs" />
     <Compile Include="Infrastructure\MVC\ViewEngineConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,15 +265,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas222\Administration\Views\web.config" />
-    <Content Include="Areas222\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas222\User\Views\web.config" />
     <Content Include="Areas222\User\Views\MyPage\Dashboard.cshtml" />
     <Content Include="Areas222\User\Views\_ViewStart.cshtml" />
     <Content Include="Features\_ViewStart.cshtml" />
-    <Content Include="Areas222\Administration\Views\Meter\Create.cshtml" />
-    <Content Include="Areas222\Administration\Views\Meter\Edit.cshtml" />
-    <Content Include="Areas222\Administration\Views\Meter\List.cshtml" />
+    <Content Include="Features\Administrator\Meters\Create.cshtml" />
+    <Content Include="Features\Administrator\Meters\Edit.cshtml" />
+    <Content Include="Features\Administrator\Meters\List.cshtml" />
     <Content Include="Properties\webjobs-list.json" />
     <Content Include="appSettings.private.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -284,6 +288,13 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Features\web.config" />
+    <Content Include="Features\Shared\NavBar\UserBar.cshtml" />
+    <Content Include="Features\User\Overview\Index.cshtml" />
+    <Content Include="Features\Shared\NavBar\Menu.cshtml" />
+    <Content Include="Features\Shared\NavBar\NavBar.cshtml" />
+    <Content Include="Features\Shared\Profile\Profile.cshtml" />
+    <Content Include="Features\Administrator\Dashboard\Index.cshtml" />
+    <Content Include="Features\Administrator\Properties\DeleteProperty.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -310,13 +321,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas222\User\Views\Shared\Error.cshtml" />
-    <Content Include="Features\DefaultLayout\_Layout.cshtml" />
-    <Content Include="Features\Account\Login.cshtml" />
-    <Content Include="Areas222\Administration\Views\User\Create.cshtml" />
-    <Content Include="Features\Account\ResetPassword.cshtml" />
-    <Content Include="Features\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Features\Account\SendCode.cshtml" />
-    <Content Include="Features\Account\VerifyCode.cshtml" />
+    <Content Include="Features\Shared\Layout\_Site.cshtml" />
+    <Content Include="Features\Shared\Login\Login.cshtml" />
+    <Content Include="Features\Administrator\Users\Create.cshtml" />
     <Content Include="Areas222\User\Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Areas222\User\Views\Manage\ChangePassword.cshtml" />
     <Content Include="Areas222\User\Views\Manage\Index.cshtml" />
@@ -324,13 +331,12 @@
     <Content Include="Areas222\User\Views\Manage\SetPassword.cshtml" />
     <Content Include="Areas222\User\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Areas222\User\Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Areas222\Administration\Views\Property\List.cshtml" />
-    <Content Include="Areas222\Administration\Views\Property\Create.cshtml" />
-    <Content Include="Areas222\Administration\Views\Property\Edit.cshtml" />
+    <Content Include="Features\Administrator\Properties\ListProperties.cshtml" />
+    <Content Include="Features\Administrator\Properties\CreateProperty.cshtml" />
+    <Content Include="Features\Administrator\Properties\EditProperty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas222\Administration\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -365,7 +371,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50081</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50081/</IISUrl>
+          <IISUrl>https://water-meter.localtest.me</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

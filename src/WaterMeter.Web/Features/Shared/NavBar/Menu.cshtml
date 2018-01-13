@@ -1,0 +1,23 @@
+﻿@using WaterMeter.Core.Constants
+@using WaterMeter.Web.Features.Administrator.Dashboard
+@using WaterMeter.Web.Features.Administrator.Properties
+<ul class="nav navbar-nav">
+    @MenuItem(Url.Action<DashboardController>(x => x.Index()), "Dashboard", Role.Administrator)
+    @MenuItem(Url.Action<PropertyController>(x => x.ListProperties()), "Manage properties", Role.Administrator)
+</ul>
+
+
+@helper MenuItem(string url, string text, string role)
+{
+    if (!User.IsInRole(role))
+    {
+        return;
+    }
+
+    var currentUrl = Request?.Url?.OriginalString;
+    var className = currentUrl.StartsWith(url) ? "active" : string.Empty;
+
+        <li>
+            <a href="@url" class="@className">@text</a>
+        </li>
+}

@@ -1,5 +1,8 @@
 ﻿using System.Web.Mvc;
 using WaterMeter.Core.Constants;
+using WaterMeter.Web.Features.Administrator.Dashboard;
+using WaterMeter.Web.Features.User.Overview;
+using WaterMeter.Web.Infrastructure.MVC;
 
 namespace WaterMeter.Web.Features
 {
@@ -12,11 +15,10 @@ namespace WaterMeter.Web.Features
             {
                 if (HttpContext.User.IsInRole(Role.Administrator))
                 {
-                    //return RedirectToAction("List", "Property", new {area = "Administration"});
+                    return this.RedirectToAction<DashboardController>(x=>x.Index());
                 }
 
-                //return RedirectToAction("Dashboard", "MyPage", new { area = "User" });
-
+                return this.RedirectToAction<OverviewController>(x => x.Index());
             }
 
             return new HttpUnauthorizedResult();

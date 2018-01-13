@@ -1,0 +1,32 @@
+﻿@using WaterMeter.Web.Features.Administrator.Properties
+@model WaterMeter.Web.Features.Administrator.Properties.PropertyListModel
+
+<h1>Properties</h1>
+
+@if (Model == null || !Model.Properties.Any())
+{
+    <p>There are no properties</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var property in Model.Properties)
+            {
+                <tr>
+                    <td>@property.Address</td>
+                    <td>@(Html.ActionLink<PropertyController>("Edit", x => x.EditProperty(property.Id)))</td>
+                    <td>@(Html.ActionLink<PropertyController>("Delete", x => x.DeleteProperty(property.Id)))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@(Html.ActionLink<PropertyController>("Create", x => x.CreateProperty(), null, new { @class = "btn btn-primary" }))

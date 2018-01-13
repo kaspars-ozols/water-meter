@@ -10,7 +10,7 @@ namespace WaterMeter.Web.Areas222.User.Controllers
     public class MyPageController : Controller
     {
         [HttpGet]
-        [Route("dashboard")]
+        [Route("ddashboard")]
         public ActionResult Dashboard()
         {
             var model = new DashboardViewModel();
