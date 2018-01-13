@@ -190,6 +190,10 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Features\Administrator\Dashboard\DashboardController.cs" />
     <Compile Include="Features\Administrator\Meters\MeterController.cs" />
+    <Compile Include="Features\Administrator\Users\EditModel.cs" />
+    <Compile Include="Features\Administrator\Users\DeleteModel.cs" />
+    <Compile Include="Features\Administrator\Users\ListItemModel.cs" />
+    <Compile Include="Features\Administrator\Users\ListModel.cs" />
     <Compile Include="Features\Administrator\Users\UserController.cs" />
     <Compile Include="Features\Administrator\Meters\MeterCreateModel.cs" />
     <Compile Include="Features\Administrator\Meters\MeterEditModel.cs" />
@@ -295,6 +299,9 @@
     <Content Include="Features\Shared\Profile\Profile.cshtml" />
     <Content Include="Features\Administrator\Dashboard\Index.cshtml" />
     <Content Include="Features\Administrator\Properties\DeleteProperty.cshtml" />
+    <Content Include="Features\Administrator\Users\ListUsers.cshtml" />
+    <Content Include="Features\Administrator\Users\DeleteUser.cshtml" />
+    <Content Include="Features\Administrator\Users\EditUser.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -323,7 +330,7 @@
     <Content Include="Areas222\User\Views\Shared\Error.cshtml" />
     <Content Include="Features\Shared\Layout\_Site.cshtml" />
     <Content Include="Features\Shared\Login\Login.cshtml" />
-    <Content Include="Features\Administrator\Users\Create.cshtml" />
+    <Content Include="Features\Administrator\Users\CreateUser.cshtml" />
     <Content Include="Areas222\User\Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Areas222\User\Views\Manage\ChangePassword.cshtml" />
     <Content Include="Areas222\User\Views\Manage\Index.cshtml" />

@@ -1,9 +1,11 @@
 ﻿@using WaterMeter.Core.Constants
 @using WaterMeter.Web.Features.Administrator.Dashboard
 @using WaterMeter.Web.Features.Administrator.Properties
+@using WaterMeter.Web.Features.Administrator.Users
 <ul class="nav navbar-nav">
     @MenuItem(Url.Action<DashboardController>(x => x.Index()), "Dashboard", Role.Administrator)
     @MenuItem(Url.Action<PropertyController>(x => x.ListProperties()), "Manage properties", Role.Administrator)
+    @MenuItem(Url.Action<UserController>(x => x.ListUsers()), "Manage users", Role.Administrator)
 </ul>
 
 
