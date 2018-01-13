@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using WaterMeter.Core.Entities;
-using WaterMeter.Web.Areas.User.Models;
+using WaterMeter.Web.Areas222.User.Models;
 
 namespace WaterMeter.Web
 {

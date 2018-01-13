@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using WaterMeter.Core.Entities;
-using WaterMeter.Web.Areas.User.Models;
+using WaterMeter.Web.Areas222.User.Models;
 
 namespace WaterMeter.Web
 {

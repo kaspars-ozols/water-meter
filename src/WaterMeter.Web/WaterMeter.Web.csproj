@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,9 +50,8 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -188,48 +188,55 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
-    <Compile Include="Areas\Administration\Controllers\MeterController.cs" />
-    <Compile Include="Areas\Administration\Controllers\UserController.cs" />
-    <Compile Include="Areas\Administration\Models\Meter\MeterCreateModel.cs" />
-    <Compile Include="Areas\Administration\Models\Meter\MeterEditModel.cs" />
-    <Compile Include="Areas\Administration\Models\Meter\MeterListItemModel.cs" />
-    <Compile Include="Areas\Administration\Models\Meter\MeterListModel.cs" />
-    <Compile Include="Areas\Administration\Models\User\CreateModel.cs" />
-    <Compile Include="Areas\Public\Controllers\LandingController.cs" />
-    <Compile Include="Areas\Public\Controllers\AccountController.cs" />
-    <Compile Include="Areas\User\Controllers\ManageController.cs" />
-    <Compile Include="Areas\Administration\Controllers\PropertyController.cs" />
-    <Compile Include="Areas\User\Controllers\MyPageController.cs" />
-    <Compile Include="Areas\User\Models\DashboardViewModel.cs" />
+    <Compile Include="Areas222\Administration\Controllers\MeterController.cs" />
+    <Compile Include="Areas222\Administration\Controllers\UserController.cs" />
+    <Compile Include="Areas222\Administration\Models\Meter\MeterCreateModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Meter\MeterEditModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Meter\MeterListItemModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Meter\MeterListModel.cs" />
+    <Compile Include="Areas222\Administration\Models\User\CreateModel.cs" />
+    <Compile Include="Features\Account\AccountController.cs" />
+    <Compile Include="Areas222\User\Controllers\ManageController.cs" />
+    <Compile Include="Areas222\Administration\Controllers\PropertyController.cs" />
+    <Compile Include="Areas222\User\Controllers\MyPageController.cs" />
+    <Compile Include="Areas222\User\Models\DashboardViewModel.cs" />
     <Compile Include="DependencyResolution\ControllerConvention.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
     <Compile Include="DependencyResolution\StructureMapScopeModule.cs" />
+    <Compile Include="Features\RootController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Areas\User\Models\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="Areas\User\Models\AddPhoneNumberViewModel.cs" />
-    <Compile Include="Areas\User\Models\ApplicationDbContext.cs" />
-    <Compile Include="Areas\User\Models\ChangePasswordViewModel.cs" />
-    <Compile Include="Areas\User\Models\ConfigureTwoFactorViewModel.cs" />
-    <Compile Include="Areas\User\Models\ExternalLoginListViewModel.cs" />
-    <Compile Include="Areas\User\Models\FactorViewModel.cs" />
-    <Compile Include="Areas\User\Models\ForgotPasswordViewModel.cs" />
-    <Compile Include="Areas\User\Models\ForgotViewModel.cs" />
-    <Compile Include="Areas\User\Models\LoginViewModel.cs" />
-    <Compile Include="Areas\User\Models\ManageLoginsViewModel.cs" />
-    <Compile Include="Areas\User\Models\IndexViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\Property\PropertyCreateModel.cs" />
-    <Compile Include="Areas\Administration\Models\Property\PropertyEditModel.cs" />
-    <Compile Include="Areas\Administration\Models\Property\PropertyListItemModel.cs" />
-    <Compile Include="Areas\Administration\Models\Property\PropertyListModel.cs" />
-    <Compile Include="Areas\User\Models\ResetPasswordViewModel.cs" />
-    <Compile Include="Areas\User\Models\SendCodeViewModel.cs" />
-    <Compile Include="Areas\User\Models\SetPasswordViewModel.cs" />
-    <Compile Include="Areas\User\Models\VerifyCodeViewModel.cs" />
-    <Compile Include="Areas\User\Models\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="Areas222\User\Models\AddPhoneNumberViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ApplicationDbContext.cs" />
+    <Compile Include="Areas222\User\Models\ChangePasswordViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ExternalLoginListViewModel.cs" />
+    <Compile Include="Areas222\User\Models\FactorViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ForgotPasswordViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ForgotViewModel.cs" />
+    <Compile Include="Features\Account\LoginViewModel.cs" />
+    <Compile Include="Areas222\User\Models\ManageLoginsViewModel.cs" />
+    <Compile Include="Areas222\User\Models\IndexViewModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Property\PropertyCreateModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Property\PropertyEditModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Property\PropertyListItemModel.cs" />
+    <Compile Include="Areas222\Administration\Models\Property\PropertyListModel.cs" />
+    <Compile Include="Areas222\User\Models\ResetPasswordViewModel.cs" />
+    <Compile Include="Areas222\User\Models\SendCodeViewModel.cs" />
+    <Compile Include="Areas222\User\Models\SetPasswordViewModel.cs" />
+    <Compile Include="Areas222\User\Models\VerifyCodeViewModel.cs" />
+    <Compile Include="Areas222\User\Models\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Infrastructure\MVC\FeatureViewEngine.cs" />
+    <Compile Include="Infrastructure\MVC\ActionExpressionHelper.cs" />
+    <Compile Include="Infrastructure\MVC\ControllerExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\DictionaryExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\HtmlAttributesExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\UrlHelperExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\ViewEngineConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -252,18 +259,15 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Administration\Views\web.config" />
-    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\User\Views\web.config" />
-    <Content Include="Areas\Accountant\Views\web.config" />
-    <Content Include="Areas\Common\Views\web.config" />
-    <Content Include="Areas\User\Views\MyPage\Dashboard.cshtml" />
-    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Public\Views\web.config" />
-    <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\Meter\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\Meter\Edit.cshtml" />
-    <Content Include="Areas\Administration\Views\Meter\List.cshtml" />
+    <Content Include="Areas222\Administration\Views\web.config" />
+    <Content Include="Areas222\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas222\User\Views\web.config" />
+    <Content Include="Areas222\User\Views\MyPage\Dashboard.cshtml" />
+    <Content Include="Areas222\User\Views\_ViewStart.cshtml" />
+    <Content Include="Features\_ViewStart.cshtml" />
+    <Content Include="Areas222\Administration\Views\Meter\Create.cshtml" />
+    <Content Include="Areas222\Administration\Views\Meter\Edit.cshtml" />
+    <Content Include="Areas222\Administration\Views\Meter\List.cshtml" />
     <Content Include="Properties\webjobs-list.json" />
     <Content Include="appSettings.private.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -279,6 +283,7 @@
     <Content Include="connectionStrings.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Features\web.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -304,40 +309,28 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Areas\User\Views\Shared\Error.cshtml" />
-    <Content Include="Areas\Common\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Public\Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Public\Views\Account\Login.cshtml" />
-    <Content Include="Areas\Administration\Views\User\Create.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ResetPassword.cshtml" />
-    <Content Include="Areas\Public\Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Public\Views\Account\SendCode.cshtml" />
-    <Content Include="Areas\Public\Views\Account\VerifyCode.cshtml" />
-    <Content Include="Areas\User\Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Areas\User\Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Areas\User\Views\Manage\Index.cshtml" />
-    <Content Include="Areas\User\Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Areas\User\Views\Manage\SetPassword.cshtml" />
-    <Content Include="Areas\User\Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Areas\Public\Views\Account\Lockout.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Areas\Administration\Views\Property\List.cshtml" />
-    <Content Include="Areas\Administration\Views\Property\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\Property\Edit.cshtml" />
+    <Content Include="Areas222\User\Views\Shared\Error.cshtml" />
+    <Content Include="Features\DefaultLayout\_Layout.cshtml" />
+    <Content Include="Features\Account\Login.cshtml" />
+    <Content Include="Areas222\Administration\Views\User\Create.cshtml" />
+    <Content Include="Features\Account\ResetPassword.cshtml" />
+    <Content Include="Features\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Features\Account\SendCode.cshtml" />
+    <Content Include="Features\Account\VerifyCode.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\Index.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas222\User\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Areas222\User\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas222\Administration\Views\Property\List.cshtml" />
+    <Content Include="Areas222\Administration\Views\Property\Create.cshtml" />
+    <Content Include="Areas222\Administration\Views\Property\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Accountant\Controllers\" />
-    <Folder Include="Areas\Accountant\Models\" />
-    <Folder Include="Areas\Accountant\Views\Shared\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Public\Models\" />
-    <Folder Include="Areas\Public\Views\Shared\" />
+    <Folder Include="Areas222\Administration\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -382,14 +375,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
